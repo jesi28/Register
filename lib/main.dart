@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:registration/common/ui_helper.dart';
 import 'package:registration/get_started_page.dart';
-import 'package:registration/login.dart';
-import 'package:registration/register.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,12 +11,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    UiHelper uiHelper = UiHelper();
     return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
-        home: OnBoardPage());
+      title: 'Flutter Demo',
+      theme: uiHelper.themeData("LIGHT"),
+      home: const OnBoardPage(),
+      debugShowCheckedModeBanner: false,
+    );
   }
 }

@@ -3,10 +3,12 @@ import 'package:registration/login.dart';
 import 'package:registration/register.dart';
 
 class OnBoardPage extends StatelessWidget {
+  const OnBoardPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: Stack(
         children: [
           Positioned(
@@ -15,7 +17,7 @@ class OnBoardPage extends StatelessWidget {
             child: Container(
               width: 634,
               height: 634,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 color: Color.fromARGB(130, 113, 235, 196),
               ),
@@ -25,89 +27,78 @@ class OnBoardPage extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
+                spacing: 20.0,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
-                    height: 332,
-                    width: 332,
-                    child: Image.asset(
-                      'assets/stripy man.png',
-                      fit: BoxFit.contain,
+                  Center(
+                    child: SizedBox(
+                      height: MediaQuery.sizeOf(context).height * 0.40,
+                      width: MediaQuery.sizeOf(context).width * 0.90,
+                      child: Image.asset(
+                        'assets/stripy man.png',
+                        fit: BoxFit.contain,
+                      ),
                     ),
                   ),
-                  SizedBox(height: 20),
-                  const Padding(
-                    padding: EdgeInsets.only(right: 225),
-                    child: Text(
-                      'Get started!',
-                      style: TextStyle(
-                          fontSize: 26,
+                  Text(
+                    'Get started!',
+                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                          color: Theme.of(context).colorScheme.primary,
                           fontWeight: FontWeight.w500,
-                          color: Color(0xFF169C89)),
-                    ),
+                        ),
                   ),
-
-                  const Padding(
-                    padding: EdgeInsets.only(right: 150),
-                    child: Text(
-                      'Everything starts from here!',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Color(0xFF999999),
+                  Text(
+                    'Everything starts from here!',
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                  SizedBox(
+                    width: double.maxFinite,
+                    height: MediaQuery.sizeOf(context).height * 0.05,
+                    child: FilledButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => LoginPage()),
+                        );
+                      },
+                      child: const Text(
+                        'Log in',
                       ),
                     ),
                   ),
-                  SizedBox(height: 40),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => LoginPage()),
-                      );
-                    },
-                    child: Text(
-                      'Log in',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: Size(double.infinity, 50),
-                      backgroundColor: Color(0xFF169C89),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
+                  SizedBox(
+                    width: double.maxFinite,
+                    height: MediaQuery.sizeOf(context).height * 0.05,
+                    child: OutlinedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const RegisterPage()),
+                        );
+                      },
+                      child: Text(
+                        'Register',
+                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                              fontWeight: FontWeight.w600,
+                            ),
                       ),
                     ),
                   ),
-                  const SizedBox(height: 10),
-                  OutlinedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => RegisterPage()),
-                      );
-                    },
-                    child: Text('Register'),
-                    style: OutlinedButton.styleFrom(
-                      minimumSize: Size(double.infinity, 50),
-                      side: BorderSide(color: Color(0xFF169C89)),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 20),
                   Text(
                     'Or connect via',
-                    style: TextStyle(color: Colors.grey),
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          fontWeight: FontWeight.normal,
+                        ),
                   ),
-                  SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      socialButton("assets/goog.png"),
+                      socialButton(context, "assets/goog.png"),
                       const SizedBox(width: 12),
-                      socialButton("assets/facebook.png"),
+                      socialButton(context, "assets/facebook.png"),
                       const SizedBox(width: 12),
-                      socialButton("assets/apple.png"),
+                      socialButton(context, "assets/apple.png"),
                     ],
                   ),
                 ],
@@ -120,15 +111,16 @@ class OnBoardPage extends StatelessWidget {
   }
 }
 
-Widget socialButton(String assetPath) {
+Widget socialButton(BuildContext context, String assetPath) {
   return Container(
     width: 100,
     height: 50,
     padding: const EdgeInsets.all(10),
     decoration: BoxDecoration(
-        color: Color(0xFFF8F8F8),
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: Colors.grey.shade200, width: 2)),
+      color: Theme.of(context).colorScheme.surface,
+      borderRadius: BorderRadius.circular(8),
+      border: Border.all(color: Theme.of(context).colorScheme.surfaceContainer, width: 2),
+    ),
     child: Image.asset(
       assetPath,
       fit: BoxFit.contain,
