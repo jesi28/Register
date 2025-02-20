@@ -14,9 +14,9 @@ class MyApp extends StatelessWidget {
     UiHelper uiHelper = UiHelper();
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: uiHelper.themeData("LIGHT"),
       home: const OnBoardPage(),
-      debugShowCheckedModeBanner: false,
     );
   }
 }
