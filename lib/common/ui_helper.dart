@@ -23,7 +23,7 @@ class UiHelper {
             const TextStyle(
               inherit: false,
               fontWeight: FontWeight.w400,
-              fontFamily: Constants.FONT_POPPINS,
+              fontFamily: Constants.FONT_INTER,
             ),
           ),
         ),
@@ -39,7 +39,7 @@ class UiHelper {
             const TextStyle(
               inherit: false,
               fontWeight: FontWeight.w500,
-              fontFamily: Constants.FONT_POPPINS,
+              fontFamily: Constants.FONT_INTER,
             ),
           ),
         ),
@@ -47,63 +47,63 @@ class UiHelper {
       textTheme: const TextTheme(
         bodyLarge: TextStyle(
           inherit: true,
-          fontFamily: Constants.FONT_POPPINS,
+          fontFamily: Constants.FONT_INTER,
         ),
         bodyMedium: TextStyle(
           inherit: true,
-          fontFamily: Constants.FONT_POPPINS,
+          fontFamily: Constants.FONT_INTER,
         ),
         bodySmall: TextStyle(
           inherit: true,
-          fontFamily: Constants.FONT_POPPINS,
+          fontFamily: Constants.FONT_INTER,
         ),
         labelLarge: TextStyle(
           inherit: true,
-          fontFamily: Constants.FONT_POPPINS,
+          fontFamily: Constants.FONT_INTER,
         ),
         labelMedium: TextStyle(
           inherit: true,
-          fontFamily: Constants.FONT_POPPINS,
+          fontFamily: Constants.FONT_INTER,
         ),
         labelSmall: TextStyle(
           inherit: true,
-          fontFamily: Constants.FONT_POPPINS,
+          fontFamily: Constants.FONT_INTER,
         ),
         titleLarge: TextStyle(
           inherit: true,
-          fontFamily: Constants.FONT_POPPINS,
+          fontFamily: Constants.FONT_INTER,
         ),
         titleMedium: TextStyle(
           inherit: true,
-          fontFamily: Constants.FONT_POPPINS,
+          fontFamily: Constants.FONT_INTER,
         ),
         titleSmall: TextStyle(
           inherit: true,
-          fontFamily: Constants.FONT_POPPINS,
+          fontFamily: Constants.FONT_INTER,
         ),
         headlineLarge: TextStyle(
           inherit: true,
-          fontFamily: Constants.FONT_POPPINS,
+          fontFamily: Constants.FONT_INTER,
         ),
         headlineMedium: TextStyle(
           inherit: true,
-          fontFamily: Constants.FONT_POPPINS,
+          fontFamily: Constants.FONT_INTER,
         ),
         headlineSmall: TextStyle(
           inherit: true,
-          fontFamily: Constants.FONT_POPPINS,
+          fontFamily: Constants.FONT_INTER,
         ),
         displayLarge: TextStyle(
           inherit: true,
-          fontFamily: Constants.FONT_POPPINS,
+          fontFamily: Constants.FONT_INTER,
         ),
         displayMedium: TextStyle(
           inherit: true,
-          fontFamily: Constants.FONT_POPPINS,
+          fontFamily: Constants.FONT_INTER,
         ),
         displaySmall: TextStyle(
           inherit: true,
-          fontFamily: Constants.FONT_POPPINS,
+          fontFamily: Constants.FONT_INTER,
         ),
       ),
     );

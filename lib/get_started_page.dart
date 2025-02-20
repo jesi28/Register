@@ -17,9 +17,9 @@ class OnBoardPage extends StatelessWidget {
             child: Container(
               width: 634,
               height: 634,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.primaryContainer,
                 shape: BoxShape.circle,
-                color: Color.fromARGB(130, 113, 235, 196),
               ),
             ),
           ),
@@ -27,7 +27,7 @@ class OnBoardPage extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
-                spacing: 20.0,
+                spacing: 8.0,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -44,17 +44,23 @@ class OnBoardPage extends StatelessWidget {
                   Text(
                     'Get started!',
                     style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                          color: Theme.of(context).colorScheme.primary,
-                          fontWeight: FontWeight.w500,
-                        ),
+                        color: Theme.of(context).colorScheme.primary,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 26),
                   ),
                   Text(
                     'Everything starts from here!',
-                    style: Theme.of(context).textTheme.titleMedium,
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                        color: Theme.of(context).colorScheme.outline,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 18),
+                  ),
+                  const SizedBox(
+                    height: 10,
                   ),
                   SizedBox(
                     width: double.maxFinite,
-                    height: MediaQuery.sizeOf(context).height * 0.05,
+                    height: MediaQuery.sizeOf(context).height * 0.06,
                     child: FilledButton(
                       onPressed: () {
                         Navigator.push(
@@ -69,30 +75,37 @@ class OnBoardPage extends StatelessWidget {
                   ),
                   SizedBox(
                     width: double.maxFinite,
-                    height: MediaQuery.sizeOf(context).height * 0.05,
+                    height: MediaQuery.sizeOf(context).height * 0.06,
                     child: OutlinedButton(
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const RegisterPage()),
+                          MaterialPageRoute(
+                              builder: (context) => const RegisterPage()),
                         );
                       },
                       child: Text(
                         'Register',
                         style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                              fontWeight: FontWeight.w600,
-                            ),
+                            fontWeight: FontWeight.w600,
+                            color: Theme.of(context).colorScheme.primary),
                       ),
                     ),
                   ),
-                  Text(
-                    'Or connect via',
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          fontWeight: FontWeight.normal,
-                        ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Center(
+                    child: Text(
+                      'Or connect via',
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          color: Theme.of(context).colorScheme.outline,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 16),
+                    ),
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       socialButton(context, "assets/goog.png"),
                       const SizedBox(width: 12),
@@ -113,13 +126,14 @@ class OnBoardPage extends StatelessWidget {
 
 Widget socialButton(BuildContext context, String assetPath) {
   return Container(
-    width: 100,
+    width: 113,
     height: 50,
     padding: const EdgeInsets.all(10),
     decoration: BoxDecoration(
       color: Theme.of(context).colorScheme.surface,
       borderRadius: BorderRadius.circular(8),
-      border: Border.all(color: Theme.of(context).colorScheme.surfaceContainer, width: 2),
+      border: Border.all(
+          color: Theme.of(context).colorScheme.surfaceContainer, width: 2),
     ),
     child: Image.asset(
       assetPath,

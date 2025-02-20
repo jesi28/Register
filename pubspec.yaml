@@ -77,53 +77,51 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Poppins
+    - family: inter
       fonts:
-        - asset: fonts/poppins/Poppins-Black.ttf
-        - asset: fonts/poppins/Poppins-BlackItalic.ttf
+        - asset: fonts/Inter/static/Inter_18pt-Black.ttf
+        - asset: fonts/Inter/static/Inter_18pt-BlackItalic.ttf
           style: italic
-        - asset: fonts/poppins/Poppins-Thin.ttf
+        - asset: fonts/Inter/static/Inter_18pt-Thin.ttf
           weight: 100
-        - asset: fonts/poppins/Poppins-ThinItalic.ttf
+        - asset: fonts/Inter/static/Inter_18pt-ThinItalic.ttf
           weight: 100
           style: italic
-        - asset: fonts/poppins/Poppins-ExtraLight.ttf
+        - asset: fonts/Inter/static/Inter_18pt-ExtraLight.ttf
           weight: 200
-        - asset: fonts/poppins/Poppins-ExtraLightItalic.ttf
+        - asset: fonts/Inter/static/Inter_18pt-ExtraLightItalic.ttf
           weight: 200
           style: italic
-        - asset: fonts/poppins/Poppins-Light.ttf
+        - asset: fonts/Inter/static/Inter_18pt-Light.ttf
           weight: 300
-        - asset: fonts/poppins/Poppins-LightItalic.ttf
+        - asset: fonts/Inter/static/Inter_18pt-LightItalic.ttf
           weight: 300
           style: italic
-        - asset: fonts/poppins/Poppins-Italic.ttf
+        - asset: fonts/Inter/static/Inter_18pt-Italic.ttf
           weight: 400
           style: italic
-        - asset: fonts/poppins/Poppins-Regular.ttf
+        - asset: fonts/Inter/static/Inter_18pt-Regular.ttf
           weight: 400
-        - asset: fonts/poppins/Poppins-Medium.ttf
+        - asset: fonts/Inter/static/Inter_18pt-Medium.ttf
           weight: 500
-        - asset: fonts/poppins/Poppins-MediumItalic.ttf
+        - asset: fonts/Inter/static/Inter_18pt-MediumItalic.ttf
           weight: 500
           style: italic
-        - asset: fonts/poppins/Poppins-SemiBold.ttf
+        - asset: fonts/Inter/static/Inter_18pt-SemiBold.ttf
           weight: 600
           style: italic
-        - asset: fonts/poppins/Poppins-SemiBoldItalic.ttf
+        - asset: fonts/Inter/static/Inter_18pt-SemiBoldItalic.ttf
           weight: 600
           style: italic
-        - asset: fonts/poppins/Poppins-Bold.ttf
+        - asset: fonts/Inter/static/Inter_18pt-Bold.ttf
           weight: 700
-        - asset: fonts/poppins/Poppins-BoldItalic.ttf
+        - asset: fonts/Inter/static/Inter_18pt-BoldItalic.ttf
           weight: 700
           style: italic
-        - asset: fonts/poppins/Poppins-ExtraBold.ttf
+        - asset: fonts/Inter/static/Inter_18pt-ExtraBold.ttf
           weight: 800
-        - asset: fonts/poppins/Poppins-ExtraBoldItalic.ttf
+        - asset: fonts/Inter/static/Inter_18pt-ExtraBoldItalic.ttf
           weight: 800
           style: italic
   
-  #
-  # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/to/font-from-package
+  

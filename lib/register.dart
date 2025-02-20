@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:registration/get_started_page.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -14,18 +15,30 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).colorScheme.surface,
         body: Stack(
           children: [
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: IconButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const OnBoardPage()),
+                    );
+                  },
+                  icon: const Icon(Icons.close_rounded)),
+            ),
             Positioned(
               top: -156,
               right: -141,
               child: Container(
                 width: 412,
                 height: 412,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Color(0xFF169C89),
+                  color: Theme.of(context).colorScheme.primaryContainer,
                 ),
               ),
             ),
@@ -40,52 +53,73 @@ class _RegisterPageState extends State<RegisterPage> {
                       child: Padding(
                         padding: const EdgeInsets.only(bottom: 200),
                         child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Image.asset(
-                                'assets/strip3.png',
-                                fit: BoxFit.contain,
+                              Center(
+                                child: Image.asset(
+                                  'assets/strip3.png',
+                                  fit: BoxFit.contain,
+                                ),
                               ),
                               const SizedBox(height: 10),
-                              const Padding(
-                                padding: EdgeInsets.only(right: 195),
-                                child: Text(
-                                  'Create account!',
-                                  style: TextStyle(
-                                      fontSize: 26,
-                                      fontWeight: FontWeight.w500,
-                                      color: Color(0xFF169C89)),
-                                ),
+                              Text(
+                                'Create account!',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headlineSmall
+                                    ?.copyWith(
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .primary,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 26),
                               ),
-                              const Padding(
-                                padding: EdgeInsets.only(right: 200),
-                                child: Text(
-                                  'sign up to get started.',
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    color: Color(0xFF999999),
-                                  ),
-                                ),
+                              Text(
+                                'sign up to get started',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium
+                                    ?.copyWith(
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .outline,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 18),
                               ),
                               const SizedBox(height: 40),
                               FormBuilderTextField(
                                 decoration: InputDecoration(
                                     hintText: 'Name',
-                                    hintStyle: const TextStyle(
-                                        color: Color(0xFFC7C7C7)),
-                                    prefixIcon: const Icon(
+                                    filled: true,
+                                    fillColor: Theme.of(context)
+                                        .colorScheme
+                                        .surfaceContainerLow,
+                                    hintStyle: Theme.of(context)
+                                        .textTheme
+                                        .bodyLarge
+                                        ?.copyWith(
+                                            color: Theme.of(context)
+                                                .colorScheme
+                                                .outlineVariant),
+                                    prefixIcon: Icon(
                                       Icons.person_2_outlined,
-                                      color: Color(0xFFB1B1B1),
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .outlineVariant,
                                     ),
                                     border: OutlineInputBorder(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         borderSide: const BorderSide(
                                             color: Color(0xFFF8F8F8))),
-                                    focusedBorder: const OutlineInputBorder(
+                                    focusedBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
-                                            color: Color(0xFFDDDDDD)))),
-                                name: 'name',
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .surfaceDim,
+                                    ))),
+                                name: 'mail',
                               ),
                               const SizedBox(
                                 height: 10,
@@ -93,20 +127,34 @@ class _RegisterPageState extends State<RegisterPage> {
                               FormBuilderTextField(
                                 decoration: InputDecoration(
                                     hintText: 'Email Address',
-                                    hintStyle: const TextStyle(
-                                        color: Color(0xFFC7C7C7)),
-                                    prefixIcon: const Icon(
+                                    filled: true,
+                                    fillColor: Theme.of(context)
+                                        .colorScheme
+                                        .surfaceContainerLow,
+                                    hintStyle: Theme.of(context)
+                                        .textTheme
+                                        .bodyLarge
+                                        ?.copyWith(
+                                            color: Theme.of(context)
+                                                .colorScheme
+                                                .outlineVariant),
+                                    prefixIcon: Icon(
                                       Icons.email,
-                                      color: Color(0xFFB1B1B1),
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .outlineVariant,
                                     ),
                                     border: OutlineInputBorder(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                         borderSide: const BorderSide(
                                             color: Color(0xFFF8F8F8))),
-                                    focusedBorder: const OutlineInputBorder(
+                                    focusedBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
-                                            color: Color(0xFFDDDDDD)))),
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .surfaceDim,
+                                    ))),
                                 name: 'mail',
                               ),
                               const SizedBox(
@@ -115,24 +163,43 @@ class _RegisterPageState extends State<RegisterPage> {
                               FormBuilderTextField(
                                 decoration: InputDecoration(
                                     hintText: 'Password',
-                                    hintStyle: const TextStyle(
-                                        color: Color(0xFFC7C7C7)),
-                                    prefixIcon: const Icon(
-                                      Icons.lock_outline,
-                                      color: Color(0xFFB1B1B1),
+                                    filled: true,
+                                    fillColor: Theme.of(context)
+                                        .colorScheme
+                                        .surfaceContainerLow,
+                                    hintStyle: Theme.of(context)
+                                        .textTheme
+                                        .bodyLarge
+                                        ?.copyWith(
+                                            color: Theme.of(context)
+                                                .colorScheme
+                                                .outlineVariant),
+                                    prefixIcon: Icon(
+                                      Icons.email,
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .outlineVariant,
                                     ),
-                                    suffixIcon: const Icon(
-                                      Icons.remove_red_eye,
-                                      color: Colors.grey,
+                                    suffixIcon: Icon(
+                                      Icons.remove_red_eye_outlined,
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .outlineVariant,
                                     ),
                                     border: OutlineInputBorder(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
-                                        borderSide: const BorderSide(
-                                            color: Color(0xFFF8F8F8))),
-                                    focusedBorder: const OutlineInputBorder(
                                         borderSide: BorderSide(
-                                            color: Color(0xFFDDDDDD)))),
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .surfaceDim,
+                                        )),
+                                    focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .surfaceDim,
+                                    ))),
                                 name: 'password',
                               ),
                               const SizedBox(
@@ -141,24 +208,43 @@ class _RegisterPageState extends State<RegisterPage> {
                               FormBuilderTextField(
                                 decoration: InputDecoration(
                                     hintText: 'Confirm Password',
-                                    hintStyle: const TextStyle(
-                                        color: Color(0xFFC7C7C7)),
-                                    prefixIcon: const Icon(
-                                      Icons.lock_outline,
-                                      color: Color(0xFFB1B1B1),
+                                    filled: true,
+                                    fillColor: Theme.of(context)
+                                        .colorScheme
+                                        .surfaceContainerLow,
+                                    hintStyle: Theme.of(context)
+                                        .textTheme
+                                        .bodyLarge
+                                        ?.copyWith(
+                                            color: Theme.of(context)
+                                                .colorScheme
+                                                .outlineVariant),
+                                    prefixIcon: Icon(
+                                      Icons.email,
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .outlineVariant,
                                     ),
-                                    suffixIcon: const Icon(
-                                      Icons.remove_red_eye,
-                                      color: Colors.grey,
+                                    suffixIcon: Icon(
+                                      Icons.remove_red_eye_outlined,
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .outlineVariant,
                                     ),
                                     border: OutlineInputBorder(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
-                                        borderSide: const BorderSide(
-                                            color: Color(0xFFF8F8F8))),
-                                    focusedBorder: const OutlineInputBorder(
                                         borderSide: BorderSide(
-                                            color: Color(0xFFDDDDDD)))),
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .surfaceDim,
+                                        )),
+                                    focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .surfaceDim,
+                                    ))),
                                 name: 'password',
                               ),
                               const SizedBox(
@@ -193,9 +279,8 @@ class _RegisterPageState extends State<RegisterPage> {
                                       style: TextStyle(
                                         fontSize: 16,
                                         fontWeight: FontWeight.w400,
-                                        decoration: TextDecoration
-                                            .underline,
-                                        color: Color(0xFF169C89), 
+                                        decoration: TextDecoration.underline,
+                                        color: Color(0xFF169C89),
                                       ),
                                     ),
                                     Text(
@@ -209,9 +294,8 @@ class _RegisterPageState extends State<RegisterPage> {
                                       style: TextStyle(
                                         fontSize: 16,
                                         fontWeight: FontWeight.w400,
-                                        decoration: TextDecoration
-                                            .underline,
-                                        color: Color(0xFF169C89), 
+                                        decoration: TextDecoration.underline,
+                                        color: Color(0xFF169C89),
                                       ),
                                     )
                                   ],
@@ -220,20 +304,14 @@ class _RegisterPageState extends State<RegisterPage> {
                               const SizedBox(
                                 height: 10,
                               ),
-                              ElevatedButton(
-                                onPressed: () {},
-                                child: Text(
-                                  'Register',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w400),
-                                ),
-                                style: ElevatedButton.styleFrom(
-                                  minimumSize: Size(500, 55),
-                                  backgroundColor: Color(0xFF169C89),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
+                              SizedBox(
+                                width: double.maxFinite,
+                                height:
+                                    MediaQuery.sizeOf(context).height * 0.06,
+                                child: FilledButton(
+                                  onPressed: () {},
+                                  child: const Text(
+                                    'Log in',
                                   ),
                                 ),
                               ),
@@ -258,10 +336,9 @@ class _RegisterPageState extends State<RegisterPage> {
                                           style: TextStyle(
                                             fontSize: 18,
                                             fontWeight: FontWeight.w400,
-                                            decoration: TextDecoration
-                                                .underline, 
-                                            color:
-                                                Color(0xFF169C89), 
+                                            decoration:
+                                                TextDecoration.underline,
+                                            color: Color(0xFF169C89),
                                           ),
                                         )
                                       ],
