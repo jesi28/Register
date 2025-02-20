@@ -311,7 +311,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                 child: FilledButton(
                                   onPressed: () {},
                                   child: const Text(
-                                    'Log in',
+                                    'Register',
                                   ),
                                 ),
                               ),

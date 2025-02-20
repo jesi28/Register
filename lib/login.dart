@@ -10,6 +10,11 @@ class LoginPage extends StatelessWidget {
         backgroundColor: Colors.white,
         body: Stack(
           children: [
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: IconButton(
+                  onPressed: () {}, icon: const Icon(Icons.close_rounded)),
+            ),
             Positioned(
               top: -156,
               right: -141,
