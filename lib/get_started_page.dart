@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:registration/login.dart';
-import 'package:registration/register.dart';
+import 'package:go_router/go_router.dart';
 
 class OnBoardPage extends StatelessWidget {
   const OnBoardPage({super.key});
@@ -63,10 +62,7 @@ class OnBoardPage extends StatelessWidget {
                     height: MediaQuery.sizeOf(context).height * 0.06,
                     child: FilledButton(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => LoginPage()),
-                        );
+                        context.go("/login");
                       },
                       child: const Text(
                         'Log in',
@@ -78,11 +74,7 @@ class OnBoardPage extends StatelessWidget {
                     height: MediaQuery.sizeOf(context).height * 0.06,
                     child: OutlinedButton(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const RegisterPage()),
-                        );
+                        context.go("/Register");
                       },
                       child: Text(
                         'Register',
