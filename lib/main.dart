@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:registration/common/constants.dart';
 import 'package:registration/common/ui_helper.dart';
 import 'package:registration/get_started_page.dart';
+import 'package:registration/grid/pluto_grid.dart';
 import 'package:registration/home_page.dart';
 import 'package:registration/login/views/login_page.dart';
 import 'package:registration/register.dart';
@@ -15,11 +16,15 @@ void main() {
 class MyApp extends StatelessWidget {
   MyApp({super.key});
   final GoRouter _router = GoRouter(
-    initialLocation: '/onboard',
+    initialLocation: '/grid',
     routes: [
       GoRoute(
         path: '/onboard',
         builder: (context, state) => const OnBoardPage(),
+      ),
+      GoRoute(
+        path: '/grid',
+        builder: (context, state) => const PlutoGridExamplePage(),
       ),
       GoRoute(
         path: '/homepage',
